@@ -17,7 +17,7 @@ const ingredients = [
   {
     name: 'Idaho Potatoes',
     origin: 'Snake River Valley, Idaho',
-    description: 'Our fries are made from potatoes grown in Idaho's volcanic soil. Each batch is cut fresh daily and cooked in pure, cholesterol-free peanut oil.',
+    description: 'Our fries are made from potatoes grown in Idaho\'s volcanic soil. Each batch is cut fresh daily and cooked in pure, cholesterol-free peanut oil.',
     image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     category: 'Potatoes'
   },

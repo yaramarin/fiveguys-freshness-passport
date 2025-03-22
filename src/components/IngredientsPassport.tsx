@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect, useState } from 'react';
-import { Check } from 'lucide-react';
+import { Check, Leaf } from 'lucide-react';
 
 type IngredientCategory = {
   title: string;
@@ -204,13 +204,34 @@ const IngredientsPassport: React.FC = () => {
       }`}
     >
       <div className="passport bg-white border-8 border-fiveguys-red rounded-lg overflow-hidden shadow-2xl">
-        <div className="passport-header bg-fiveguys-red text-white p-6 text-center">
+        <div className="passport-header bg-fiveguys-red text-white p-6 text-center relative">
+          <div className="absolute top-4 left-4 flex items-center bg-white/20 backdrop-blur-sm py-1 px-2 rounded-full">
+            <Leaf className="w-4 h-4 text-white mr-1" />
+            <span className="text-xs font-bold uppercase tracking-wider">Fresh Guaranteed</span>
+          </div>
+          
           <h2 className="text-3xl md:text-4xl font-bold">The Five Guys Freshness Passport</h2>
-          <p className="text-lg mt-2">All ingredients - Transparent sourcing</p>
+          <p className="text-lg mt-2">All fresh ingredients - Transparent sourcing</p>
         </div>
         
         <div className="passport-stamp absolute top-6 right-6 bg-white/10 backdrop-blur-sm rounded-full p-4 border-2 border-white/30 transform rotate-12">
           <div className="text-white text-sm font-bold">AUTHENTICATED</div>
+        </div>
+
+        <div className="passport-meta flex justify-between items-center border-b border-gray-200 bg-green-50 px-6 py-3">
+          <div className="flex items-center">
+            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-2">
+              <div className="w-3 h-3 rounded-full bg-green-500 freshness-pulse"></div>
+            </div>
+            <span className="text-sm text-green-800 font-medium">Daily Fresh Delivery</span>
+          </div>
+          
+          <div className="flex items-center">
+            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-2">
+              <Check className="w-3 h-3 text-green-500" />
+            </div>
+            <span className="text-sm text-green-800 font-medium">Quality Approved</span>
+          </div>
         </div>
 
         <div className="passport-content p-6">
@@ -248,9 +269,14 @@ const IngredientsPassport: React.FC = () => {
           ))}
         </div>
         
-        <div className="passport-footer p-6 bg-gray-50 border-t border-gray-200 text-center">
-          <p className="text-gray-700">This passport certifies the authentic ingredients used in all Five Guys products.</p>
-          <p className="text-sm text-gray-500 mt-2">Valid at all Five Guys locations worldwide</p>
+        <div className="passport-footer p-6 bg-gray-50 border-t border-gray-200">
+          <div className="flex justify-between items-center">
+            <p className="text-gray-700">This passport certifies the authentic fresh ingredients used in all Five Guys products.</p>
+            <div className="flex items-center">
+              <span className="freshness-badge">Fresh Certified</span>
+            </div>
+          </div>
+          <p className="text-sm text-gray-500 mt-2 text-center">Valid at all Five Guys locations worldwide</p>
         </div>
       </div>
     </div>

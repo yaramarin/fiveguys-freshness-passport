@@ -42,6 +42,7 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center items-center text-center">
         <div className="max-w-3xl">
+          <span className="inline-block px-4 py-1 bg-white text-fiveguys-red rounded-full text-sm font-semibold mb-4 animate-fade-up animation-delay-300">FARM TO TABLE FRESHNESS</span>
           <h1 
             ref={titleRef}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 opacity-0"
@@ -52,14 +53,14 @@ const Hero = () => {
             ref={subtitleRef}
             className="text-xl md:text-2xl text-white mb-8 opacity-0"
           >
-            Discover the quality journey of every ingredient in your favorite Five Guys meal.
+            Discover the journey of our hand-selected, <span className="font-bold underline decoration-fiveguys-red">never frozen</span> ingredients that make every Five Guys meal exceptional.
           </p>
           <div className="mt-8 opacity-0 animate-fade-up animation-delay-600">
             <a 
               href="#ingredients" 
               className="px-8 py-3 bg-fiveguys-red text-white font-medium rounded-md hover:bg-red-700 transition-colors duration-300 inline-flex items-center"
             >
-              Explore Our Ingredients
+              Explore Our Fresh Ingredients
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
               </svg>

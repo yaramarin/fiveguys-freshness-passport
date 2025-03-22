@@ -24,11 +24,11 @@ const Hero = () => {
 
   return (
     <div className="relative h-screen min-h-[600px] w-full overflow-hidden">
-      {/* Background image */}
+      {/* Background image - Changed to hamburger image */}
       <div className="absolute inset-0 w-full h-full bg-black">
         <img 
-          src="https://images.unsplash.com/photo-1612392166886-ee8475b03af2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
-          alt="Fresh ingredients" 
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+          alt="Delicious hamburger" 
           className="w-full h-full object-cover object-center animate-blur-in"
         />
       </div>
@@ -42,7 +42,8 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center items-center text-center">
         <div className="max-w-3xl">
-          <span className="inline-block px-4 py-1 bg-white text-fiveguys-red rounded-full text-sm font-semibold mb-4 animate-fade-up animation-delay-300">FARM TO TABLE FRESHNESS</span>
+          {/* Removed white background and made text bigger */}
+          <span className="inline-block text-fiveguys-red font-bold text-lg sm:text-xl mb-4 animate-fade-up animation-delay-300">FARM TO TABLE FRESHNESS</span>
           <h1 
             ref={titleRef}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 opacity-0"

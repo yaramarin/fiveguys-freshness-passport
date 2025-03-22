@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import IngredientCard from '../components/IngredientCard';
+import IngredientsPassport from '../components/IngredientsPassport';
 import Footer from '../components/Footer';
 
 // Ingredient data
@@ -103,7 +104,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Ingredients section */}
+      {/* Ingredients cards section */}
       <section id="ingredients" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
@@ -123,6 +124,21 @@ const Index = () => {
               />
             ))}
           </div>
+        </div>
+      </section>
+      
+      {/* Ingredients Passport section - NEW */}
+      <section className="py-20 bg-fiveguys-gray">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            The Complete <span className="text-gradient">Freshness Passport</span>
+          </h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-12">
+            Our commitment to transparency means we share every ingredient that goes into our menu items. 
+            Discover the complete list in our official Freshness Passport.
+          </p>
+          
+          <IngredientsPassport />
         </div>
       </section>
       

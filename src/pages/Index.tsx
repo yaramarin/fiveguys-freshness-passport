@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -144,7 +143,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Freshness Guarantee section - NEW */}
+      {/* Freshness Guarantee section */}
       <section className="py-16 bg-gradient-to-r from-green-50 to-green-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">

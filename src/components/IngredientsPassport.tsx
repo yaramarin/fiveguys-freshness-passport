@@ -1,172 +1,274 @@
 
 import React, { useRef, useEffect, useState } from 'react';
-import { Check, Leaf } from 'lucide-react';
+import { Check, Leaf, Award, Calendar, MapPin, User, Shield } from 'lucide-react';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
+type Ingredient = {
+  name: string;
+  origin: string;
+  farmer: string;
+  datePicked: string;
+  location: string;
+  processes: string[];
+};
 
 type IngredientCategory = {
   title: string;
-  items: IngredientItem[];
   color: string;
-};
-
-type IngredientItem = {
-  name: string;
-  composition: string;
+  items: Ingredient[];
 };
 
 const ingredientData: IngredientCategory[] = [
   {
-    title: "CARNE",
+    title: "BEEF & PROTEINS",
     color: "bg-red-600",
     items: [
       {
+        name: "Premium Ground Beef",
+        origin: "Midwest, USA",
+        farmer: "Heartland Family Farms",
+        datePicked: "Daily",
+        location: "Iowa Plains",
+        processes: ["Grass-fed", "No antibiotics", "Hormone-free"]
+      },
+      {
         name: "Bacon",
-        composition: "Cerdo, regulador de acidez: Lactato sódico, sal, azúcar, estabilizadores: Trifosfatos, antioxidantes: Isoascorbato sódico, conservante: Nitrito sódico."
+        origin: "Pennsylvania, USA",
+        farmer: "Harris Valley Ranch",
+        datePicked: "Weekly",
+        location: "Lancaster County",
+        processes: ["Naturally cured", "No artificial preservatives"]
       },
       {
-        name: "Hamburguesa de vacuno",
-        composition: "Ternera picada."
-      },
-      {
-        name: "Perrito de vacuno",
-        composition: "Ternera, agua, sal, especias, extractos de especias, estabilizadores: Difosfato de dihidrógeno disódico, acetato sódico, sirope de glucosa, dextrosa, condimento, antioxidante: Ácido Ascórbico, Conservante: Nitrito sódico, proteína de SOJA, humo de madera de haya."
+        name: "Beef Hot Dogs",
+        origin: "Nebraska, USA",
+        farmer: "Prairie Ranchers Collective",
+        datePicked: "Weekly",
+        location: "Platte River Valley",
+        processes: ["100% beef", "No fillers", "Natural smoking process"]
       }
     ]
   },
   {
-    title: "PANES",
+    title: "BAKERY",
     color: "bg-amber-600",
     items: [
       {
-        name: "Pan de hamburguesa",
-        composition: "Nuestro pan es una receta patentada. Los ingredientes primarios son: Harina de TRIGO, agua, azúcar, grasa vegetal (Palma), aceite vegetal (Colza), semillas de SÉSAMO (2.3 %), levadura, LECHE entera en polvo, HUEVO líquido, sal, emulgentes (E-471, E-472e, E-481), vinagre de vino, agente de tratamiento de la harina Ácido Ascórbico (E300)."
+        name: "Hamburger Buns",
+        origin: "Local Bakeries",
+        farmer: "Five Guys Bakery Network",
+        datePicked: "Daily",
+        location: "Within 50 miles of restaurants",
+        processes: ["Made fresh daily", "No preservatives", "Traditional recipe"]
       },
       {
-        name: "Pan de perrito",
-        composition: "Nuestro pan es una receta patentada. Los ingredientes primarios son: Harina de TRIGO, agua, azúcar, grasa vegetal (Palma), aceite vegetal (Colza), levadura, LECHE entera en polvo, HUEVO líquido, sal, emulgentes (E-471, E-481), vinagre de vino, agente de tratamiento de la harina Ácido Ascórbico (E300)."
+        name: "Hot Dog Buns",
+        origin: "Local Bakeries",
+        farmer: "Five Guys Bakery Network",
+        datePicked: "Daily",
+        location: "Within 50 miles of restaurants",
+        processes: ["Made fresh daily", "No preservatives", "Traditional recipe"]
       }
     ]
   },
   {
-    title: "PATATAS FRITAS",
+    title: "POTATOES",
     color: "bg-yellow-500",
     items: [
       {
-        name: "Estilo Five Guys",
-        composition: "Patatas, aceite de CACAHUETE, sal."
+        name: "Idaho Potatoes",
+        origin: "Snake River Valley, Idaho",
+        farmer: "Russet Farms Cooperative",
+        datePicked: "Weekly",
+        location: "Eastern Idaho",
+        processes: ["Volcanic soil grown", "Hand-selected", "Unwashed until preparation"]
       },
       {
-        name: "Condimento cajun",
-        composition: "Ajo, sal, cebolla, pimentón, orégano, pimienta blanca, cayena, SEMILLAS DE APIO, aceite de colza."
+        name: "Cajun Seasoning",
+        origin: "Louisiana, USA",
+        farmer: "Bayou Spice Company",
+        datePicked: "Monthly",
+        location: "New Orleans",
+        processes: ["Small-batch blending", "No artificial flavors", "Traditional recipe"]
       }
     ]
   },
   {
-    title: "INGREDIENTES",
+    title: "VEGETABLES & PRODUCE",
     color: "bg-green-600",
     items: [
       {
-        name: "Salsa barbacoa",
-        composition: "Vinagre destilado, azúcar, pasta de tomate, agua, melaza, sal, salvado de MOSTAZA, extracto de tamarindo, saborizante de humo, conservante: benzoato de sodio, especias, polvo de ajo, cebolla en polvo."
+        name: "Tomatoes",
+        origin: "California Central Valley",
+        farmer: "SunRipe Cooperative",
+        datePicked: "Every 48 hours",
+        location: "San Joaquin Valley",
+        processes: ["Vine-ripened", "Hand-picked", "No pesticides"]
       },
       {
-        name: "Queso",
-        composition: "Queso Chedder LECHE, Agua, mantequilla (LECHE), Queso (LECHE), Proteínas de la LECHE, LECHE desnatada en polvo, suero en polvo (LECHE), emulsionantes: (E331, E339), aroma natural de queso (LECHE), sal, colorantes (E160a, E160c) corrector de acidez (E270), conservante (E200), antiaglomerante: lecitina de girasol."
+        name: "Lettuce",
+        origin: "Salinas Valley, California",
+        farmer: "Coastal Greens Farm",
+        datePicked: "Every 24 hours",
+        location: "Monterey County",
+        processes: ["Hydroponically grown", "Hand-harvested", "Cold chain maintained"]
       },
       {
-        name: "Pimientos verdes",
-        composition: "Pimientos verdes."
+        name: "Green Peppers",
+        origin: "Florida, USA",
+        farmer: "Everglades Produce",
+        datePicked: "Every 48 hours",
+        location: "South Florida",
+        processes: ["Shade-grown", "Hand-picked", "Organic methods"]
       },
       {
-        name: "Champiñones",
-        composition: "Champiñones, agua, azúcar, sal, reguladores de la acidez: ácido cítrico, ácido ascórbico."
-      },
-      {
-        name: "Salsa picante",
-        composition: "Pimienta roja de cayena, vinagre destilado, agua, sal, ajo en polvo."
-      },
-      {
-        name: "Salsa steak",
-        composition: "Tomates, vinagre de malta (GLUTEN), melaza, jarabe de glucosa-fructosa, vinagre de alcohol, azúcar, dátiles, harina de maíz, harina de centeno (GLUTEN), sal, especias, sabores, tamarindo."
+        name: "Onions",
+        origin: "Vidalia, Georgia",
+        farmer: "Sweet Valley Farms",
+        datePicked: "Weekly",
+        location: "Tattnall County",
+        processes: ["Low-sulfur soil", "Hand-harvested", "Air-dried"]
       },
       {
         name: "Jalapeños",
-        composition: "Jalapeños."
+        origin: "New Mexico, USA",
+        farmer: "Rio Grande Chili Co.",
+        datePicked: "Weekly",
+        location: "Hatch Valley",
+        processes: ["Sun-ripened", "Hand-picked", "Naturally grown"]
       },
       {
-        name: "Ketchup",
-        composition: "Tomates, vinagre de alcohol, azúcar, sal, extractos de hierbas y especias (APIO), especias."
+        name: "Mushrooms",
+        origin: "Pennsylvania, USA",
+        farmer: "Keystone Mushroom Farm",
+        datePicked: "Every 72 hours",
+        location: "Chester County",
+        processes: ["Organic substrate", "Climate-controlled", "Hand-harvested"]
       },
       {
-        name: "Lechuga",
-        composition: "Lechuga."
-      },
-      {
-        name: "Mayonesa",
-        composition: "Aceite de soja, yema de HUEVO, vinagre de alcohol, azúcar, vinagre de sidra de manzana, sal, semillas de MOSTAZA molidas, antioxidante (ácido disódico EDTA), especias."
-      },
-      {
-        name: "Mostaza",
-        composition: "Vinagre de alcohol, agua, semillas de MOSTAZA, sal, cúrcuma, pimentón, especias, aromatizantes, ajo molido."
-      },
-      {
-        name: "Cebollas",
-        composition: "Cebollas."
-      },
-      {
-        name: "Pepinillos",
-        composition: "Pepinillos, agua, vinagre, sal, estabilizante: Cloruro cálcico, ácido láctico, conservante: Benzoato sódico, sabor natural de eneldo, colorante: Riboflavina."
-      },
-      {
-        name: "Relish",
-        composition: "Pepinillo, azúcar, vinagre de alcohol, agua, sal, aromatizantes, estabilizante: Goma de xantano."
-      },
-      {
-        name: "Tomates",
-        composition: "Tomates."
+        name: "Pickles",
+        origin: "Michigan, USA",
+        farmer: "Great Lakes Pickling Co.",
+        datePicked: "Seasonal harvest",
+        location: "Western Michigan",
+        processes: ["Barrel-fermented", "Small batch", "Traditional recipe"]
       }
     ]
   },
   {
-    title: "BATIDOS",
-    color: "bg-purple-600",
-    items: [
-      {
-        name: "Base de batidos Five Guys",
-        composition: "Leche desnatada reconstituida (LECHE), crema (LECHE), azúcar, agua, dextrosa, sólidos lácteos (LECHE), emulsionantes: Mono y diglicéridos de ácidos grasos, ésteres de propilenglicol de los ácidos grasos, estabilizadores: Carragenina, goma de guar, goma de celulosa, condimento natural."
-      },
-      {
-        name: "Nata montada",
-        composition: "Crema (LECHE), propulsores: N2O, N2, emulsionante: Mono y diglicéridos, estabilizador: Carragenina."
-      }
-    ]
-  },
-  {
-    title: "MEZCLA PARA BATIDO",
+    title: "CONDIMENTS & SAUCES",
     color: "bg-blue-600",
     items: [
       {
-        name: "Plátano",
-        composition: "Plátano, azúcar, agua, sal, aroma natural, conservante: Sorbato potásico, corrector de acidez: Ácido cítrico."
+        name: "Mayonnaise",
+        origin: "Midwest, USA",
+        farmer: "Pure Foods Inc.",
+        datePicked: "Weekly batches",
+        location: "Evansville, Indiana",
+        processes: ["Real egg yolks", "Small batch", "Cold-processed"]
       },
       {
-        name: "Chocolate",
-        composition: "Azúcar, agua, azúcar invertido, cacao procesado con álcali, chocolate sin azúcar, extractos de orégano, linaza y ciruela (para conservar la frescura), lecitina de SOJA, jarabe de glucosa, chocolate simple (masa de cacao, azúcar, manteca de cacao, sabor a vainilla natural), Polvo de caseína (proteína de casina, estabilizador: Almidón de maíz cierto modificado, LECHE desnatada condensada, mantequilla (LECHE)), emulsionante: Hidroxipropilmetilcelulosa, saborizante natural, conservante: Sorbato de potasio."
+        name: "Ketchup",
+        origin: "Ohio, USA",
+        farmer: "Heartland Tomato Company",
+        datePicked: "Small batches weekly",
+        location: "Central Ohio",
+        processes: ["Slow-cooked", "Low sugar recipe", "No artificial preservatives"]
       },
       {
-        name: "Lotus Biscoff®",
-        composition: "Harina de TRIGO, azúcar, aceites vegetales (aceite de canola), jarabe de azúcar moreno, gasificante (bicarbonato sódico), harina de SOJA, sal."
+        name: "Mustard",
+        origin: "Vermont, USA",
+        farmer: "Green Mountain Mustard Works",
+        datePicked: "Monthly small batches",
+        location: "Burlington",
+        processes: ["Stone-ground", "Barrel-aged", "Authentic recipe"]
       },
       {
-        name: "Café",
-        composition: "Café, agua."
+        name: "BBQ Sauce",
+        origin: "Texas, USA",
+        farmer: "Lone Star Sauce Co.",
+        datePicked: "Weekly batches",
+        location: "Austin",
+        processes: ["Slow-simmered", "Hickory-smoked flavor", "Family recipe"]
       },
       {
-        name: "Leche malteada",
-        composition: "Harina de trigo (contiene carbonato de calcio, pirofosfato férrico, niacina y vitamina B1) (GLUTEN), cebada malteada (GLUTEN), LECHE desremada, suero seco (LECHE), azúcar, proteínas de LECHE, sal, emulsionante: lecitina de SOJA, antiaglomerante: E341(iii), aromatizante de malta."
+        name: "Hot Sauce",
+        origin: "Louisiana, USA",
+        farmer: "Delta Pepper Farm",
+        datePicked: "Monthly batches",
+        location: "Avery Island",
+        processes: ["Fermented peppers", "Aged in oak", "Original recipe"]
+      },
+      {
+        name: "Peanut Oil",
+        origin: "Georgia, USA",
+        farmer: "Southern Oil Cooperative",
+        datePicked: "Seasonal pressing",
+        location: "Albany",
+        processes: ["Cold-pressed", "Filtered naturally", "No additives"]
+      }
+    ]
+  },
+  {
+    title: "DAIRY & SHAKES",
+    color: "bg-purple-600",
+    items: [
+      {
+        name: "American Cheese",
+        origin: "Wisconsin, USA",
+        farmer: "Dairyland Cheese Co-op",
+        datePicked: "Weekly",
+        location: "Green County",
+        processes: ["Pasteurized milk", "Traditional recipe", "No artificial colors"]
+      },
+      {
+        name: "Vanilla Ice Cream",
+        origin: "Vermont, USA",
+        farmer: "Green Mountain Creamery",
+        datePicked: "Small batches weekly",
+        location: "Burlington",
+        processes: ["Madagascar vanilla", "Cream from local dairies", "Hand-churned"]
+      },
+      {
+        name: "Chocolate Syrup",
+        origin: "Pennsylvania, USA",
+        farmer: "Keystone Chocolate Works",
+        datePicked: "Monthly batches",
+        location: "Hershey",
+        processes: ["Real cocoa", "Small batch", "Traditional recipe"]
+      },
+      {
+        name: "Whipped Cream",
+        origin: "Wisconsin, USA",
+        farmer: "Meadowland Dairy",
+        datePicked: "Weekly",
+        location: "Door County",
+        processes: ["Heavy cream", "No stabilizers", "Made fresh daily"]
       }
     ]
   }
 ];
+
+// Freshness Stamp Component
+const FreshnessStamp: React.FC = () => (
+  <div className="absolute top-8 right-8 w-28 h-28 freshness-stamp rotate-12 z-20">
+    <div className="w-full h-full relative flex items-center justify-center">
+      <div className="absolute inset-0 bg-green-600 rounded-full opacity-10 animate-pulse"></div>
+      <div className="relative z-10 text-center">
+        <Award className="w-10 h-10 text-green-600 mx-auto mb-1" />
+        <div className="text-green-800 font-bold text-xs uppercase tracking-widest">Certified</div>
+        <div className="text-green-800 font-bold text-lg">FRESH</div>
+      </div>
+    </div>
+  </div>
+);
 
 const IngredientsPassport: React.FC = () => {
   const passportRef = useRef<HTMLDivElement>(null);
@@ -214,9 +316,8 @@ const IngredientsPassport: React.FC = () => {
           <p className="text-lg mt-2">All fresh ingredients - Transparent sourcing</p>
         </div>
         
-        <div className="passport-stamp absolute top-6 right-6 bg-white/10 backdrop-blur-sm rounded-full p-4 border-2 border-white/30 transform rotate-12">
-          <div className="text-white text-sm font-bold">AUTHENTICATED</div>
-        </div>
+        {/* Freshness Stamp */}
+        <FreshnessStamp />
 
         <div className="passport-meta flex justify-between items-center border-b border-gray-200 bg-green-50 px-6 py-3">
           <div className="flex items-center">
@@ -247,23 +348,66 @@ const IngredientsPassport: React.FC = () => {
               </div>
               
               <div className="border-x border-b border-gray-200 rounded-b-md overflow-hidden">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <tbody className="bg-white divide-y divide-gray-200">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-gray-50">
+                      <TableHead className="font-bold">Ingredient</TableHead>
+                      <TableHead className="font-bold">Origin</TableHead>
+                      <TableHead className="font-bold">Farmer</TableHead>
+                      <TableHead className="font-bold">Harvest</TableHead>
+                      <TableHead className="font-bold">Agricultural Processes</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
                     {category.items.map((item, index) => (
-                      <tr 
+                      <TableRow 
                         key={`${category.title}-${item.name}`}
                         className={`transition-colors hover:bg-gray-50`}
                       >
-                        <td className="py-3 px-4 whitespace-nowrap border-r border-gray-200 font-medium w-1/4">
-                          {item.name}
-                        </td>
-                        <td className="py-3 px-4 text-sm text-gray-700">
-                          {item.composition}
-                        </td>
-                      </tr>
+                        <TableCell className="font-medium">
+                          <div className="flex items-center">
+                            <div className="w-2 h-2 bg-green-500 rounded-full mr-2 freshness-pulse"></div>
+                            {item.name}
+                          </div>
+                        </TableCell>
+                        <TableCell className="text-sm">
+                          <div className="flex items-center">
+                            <MapPin className="w-3 h-3 text-gray-500 mr-1" />
+                            {item.origin}
+                          </div>
+                        </TableCell>
+                        <TableCell className="text-sm">
+                          <div className="flex items-center">
+                            <User className="w-3 h-3 text-gray-500 mr-1" />
+                            {item.farmer}
+                          </div>
+                        </TableCell>
+                        <TableCell className="text-sm">
+                          <div className="flex items-center">
+                            <Calendar className="w-3 h-3 text-gray-500 mr-1" />
+                            {item.datePicked}
+                          </div>
+                        </TableCell>
+                        <TableCell className="text-sm">
+                          <div className="flex items-start">
+                            <Shield className="w-3 h-3 text-gray-500 mr-1 mt-1" />
+                            <ul className="flex flex-wrap gap-1">
+                              {item.processes.map((process, processIndex) => (
+                                <li 
+                                  key={`${item.name}-process-${processIndex}`}
+                                  className="bg-green-50 text-green-800 rounded-full px-2 py-0.5 text-xs inline-flex items-center"
+                                >
+                                  <span className="w-1 h-1 bg-green-500 rounded-full mr-1"></span>
+                                  {process}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </TableCell>
+                      </TableRow>
                     ))}
-                  </tbody>
-                </table>
+                  </TableBody>
+                </Table>
               </div>
             </div>
           ))}

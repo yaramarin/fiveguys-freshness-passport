@@ -201,6 +201,48 @@
     content: "FRESH";
     @apply absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded z-10;
   }
+  
+  /* Freshness Stamp */
+  .freshness-stamp {
+    @apply relative;
+    position: relative;
+    border: 2px dashed #16a34a;
+    border-radius: 50%;
+    padding: 4px;
+  }
+  
+  .freshness-stamp::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: repeating-radial-gradient(
+      circle at center,
+      transparent,
+      transparent 5px,
+      rgba(22, 163, 74, 0.05) 5px,
+      rgba(22, 163, 74, 0.05) 10px
+    );
+    z-index: -1;
+  }
+  
+  .freshness-stamp::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px dashed rgba(22, 163, 74, 0.3);
+    animation: spin 30s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');

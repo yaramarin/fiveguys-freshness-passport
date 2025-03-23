@@ -5,20 +5,32 @@ const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const actionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const title = titleRef.current;
     const subtitle = subtitleRef.current;
     const overlay = overlayRef.current;
+    const action = actionRef.current;
 
-    if (title && subtitle && overlay) {
-      title.classList.add('animate-fade-up');
+    if (title && subtitle && overlay && action) {
+      // Add a slight delay to ensure smooth animation start
+      setTimeout(() => {
+        title.classList.add('animate-fade-up');
+      }, 100);
+      
       setTimeout(() => {
         subtitle.classList.add('animate-fade-up');
       }, 300);
+      
       setTimeout(() => {
         overlay.classList.add('opacity-60');
       }, 600);
+      
+      setTimeout(() => {
+        action.classList.add('opacity-100');
+        action.classList.remove('opacity-0');
+      }, 800);
     }
   }, []);
 
@@ -42,8 +54,7 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center items-center text-center">
         <div className="max-w-3xl">
-          {/* Removed white background and made text bigger */}
-          <span className="inline-block text-fiveguys-red font-bold text-lg sm:text-xl mb-4 animate-fade-up animation-delay-300">FARM TO TABLE FRESHNESS</span>
+          <span className="inline-block text-fiveguys-red font-bold text-xl sm:text-2xl mb-4">FARM TO TABLE FRESHNESS</span>
           <h1 
             ref={titleRef}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 opacity-0"
@@ -56,7 +67,7 @@ const Hero = () => {
           >
             Discover the journey of our hand-selected, <span className="font-bold underline decoration-fiveguys-red">never frozen</span> ingredients that make every Five Guys meal exceptional.
           </p>
-          <div className="mt-8 opacity-0 animate-fade-up animation-delay-600">
+          <div ref={actionRef} className="mt-8 opacity-0 transition-opacity duration-500">
             <a 
               href="#ingredients" 
               className="px-8 py-3 bg-fiveguys-red text-white font-medium rounded-md hover:bg-red-700 transition-colors duration-300 inline-flex items-center"

@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -44,10 +43,10 @@ const ingredients = [
     category: 'Vegetables'
   },
   {
-    name: 'Olive Oil',
-    origin: 'Jaén, Andalusia, Spain',
-    description: 'Our pure extra virgin olive oil is sourced from sustainable olive groves in Jaén, providing the perfect cooking medium for our famous fries with authentic Spanish flavor.',
-    image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2061&q=80',
+    name: 'Peanut Oil',
+    origin: 'Andalusia, Spain',
+    description: 'Our premium peanut oil is sourced from sustainable farms in Andalusia, providing the perfect cooking medium for our famous fries with authentic Spanish flavor.',
+    image: '/lovable-uploads/5d4da4d1-f715-40ba-aae9-f60f6a662193.png',
     category: 'Condiments'
   }
 ];

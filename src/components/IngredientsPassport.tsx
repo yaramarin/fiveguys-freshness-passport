@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import { Check, Leaf, Award, Calendar, MapPin, User, Shield } from 'lucide-react';
 import {
@@ -191,7 +190,7 @@ const ingredientData: IngredientCategory[] = [
         processes: ["Stone-ground", "Barrel-aged", "Authentic recipe"]
       },
       {
-        name: "Alioli",
+        name: "BBQ Sauce",
         origin: "Tarragona, Spain",
         farmer: "Sauces del Mediterráneo",
         datePicked: "Weekly batches",
@@ -207,12 +206,12 @@ const ingredientData: IngredientCategory[] = [
         processes: ["Fermented peppers", "Volcanic soil grown", "Original recipe"]
       },
       {
-        name: "Olive Oil",
-        origin: "Jaén, Spain",
-        farmer: "Aceites de Jaén",
+        name: "Peanut Oil",
+        origin: "Andalusia, Spain",
+        farmer: "Aceites Andaluces",
         datePicked: "Seasonal pressing",
-        location: "Sierra de Cazorla",
-        processes: ["Cold-pressed", "Extra virgin", "Protected designation of origin"]
+        location: "Sierra Sur de Sevilla",
+        processes: ["Cold-pressed", "Pure extraction", "Sustainable farming"]
       }
     ]
   },
@@ -420,7 +419,7 @@ const IngredientsPassport: React.FC = () => {
               <span className="freshness-badge">Fresh Certified</span>
             </div>
           </div>
-          <p className="text-sm text-gray-500 mt-2 text-center">Valid at all Five Guys locations worldwide</p>
+          <p className="text-sm text-gray-500 mt-2 text-center">Valid at all Five Guys locations in Spain</p>
         </div>
       </div>
     </div>

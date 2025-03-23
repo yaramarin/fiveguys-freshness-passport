@@ -255,7 +255,6 @@ const ingredientData: IngredientCategory[] = [
   }
 ];
 
-// Freshness Stamp Component
 const FreshnessStamp: React.FC = () => (
   <div className="absolute top-8 right-8 w-28 h-28 freshness-stamp rotate-12 z-20">
     <div className="w-full h-full relative flex items-center justify-center">
@@ -315,7 +314,6 @@ const IngredientsPassport: React.FC = () => {
           <p className="text-lg mt-2">All fresh ingredients - Transparent sourcing</p>
         </div>
         
-        {/* Freshness Stamp */}
         <FreshnessStamp />
 
         <div className="passport-meta flex justify-between items-center border-b border-gray-200 bg-green-50 px-6 py-3">

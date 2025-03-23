@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -46,7 +47,7 @@ const ingredients = [
     name: 'Peanut Oil',
     origin: 'Andalusia, Spain',
     description: 'Our premium peanut oil is sourced from sustainable farms in Andalusia, providing the perfect cooking medium for our famous fries with authentic Spanish flavor.',
-    image: '/lovable-uploads/5d4da4d1-f715-40ba-aae9-f60f6a662193.png',
+    image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     category: 'Condiments'
   }
 ];

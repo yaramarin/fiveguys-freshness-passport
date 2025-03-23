@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -9,43 +10,43 @@ import Footer from '../components/Footer';
 const ingredients = [
   {
     name: 'Premium Ground Beef',
-    origin: 'Family Farms, Midwest USA',
-    description: 'Our beef comes from premium cattle raised in the heart of America. Never frozen, always fresh, and ground daily in each restaurant.',
+    origin: 'Dehesas de Extremadura, Spain',
+    description: 'Our beef comes from the finest free-range cattle raised in the rich pastures of Extremadura. Never frozen, always fresh, and ground daily in each restaurant.',
     image: 'https://images.unsplash.com/photo-1551028150-64b9f398f678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
     category: 'Beef'
   },
   {
-    name: 'Idaho Potatoes',
-    origin: 'Snake River Valley, Idaho',
-    description: 'Our fries are made from potatoes grown in Idaho\'s volcanic soil. Each batch is cut fresh daily and cooked in pure, cholesterol-free peanut oil.',
+    name: 'Galician Potatoes',
+    origin: 'Ribeira Sacra, Galicia, Spain',
+    description: 'Our fries are made from potatoes grown in the fertile soil of Galicia. Each batch is cut fresh daily and cooked in pure, cholesterol-free Spanish olive oil.',
     image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     category: 'Potatoes'
   },
   {
     name: 'Artisan Buns',
-    origin: 'Local Bakeries',
-    description: 'Our buns are baked fresh using a secret recipe by local bakeries near each restaurant, ensuring the perfect blend of sweetness and texture.',
+    origin: 'Local Bakeries in Madrid',
+    description: 'Our buns are baked fresh using a secret recipe by local bakeries in Madrid, ensuring the perfect blend of sweetness and texture with traditional Spanish baking methods.',
     image: 'https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
     category: 'Bakery'
   },
   {
     name: 'Fresh Tomatoes',
-    origin: 'California Central Valley',
-    description: 'Our tomatoes are vine-ripened under the California sun, hand-selected for optimal ripeness and delivered fresh to our restaurants.',
+    origin: 'Huerta de Murcia, Spain',
+    description: 'Our tomatoes are vine-ripened under the Mediterranean sun in Murcia, hand-selected for optimal ripeness and delivered fresh to our restaurants daily.',
     image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     category: 'Vegetables'
   },
   {
     name: 'Crisp Lettuce',
-    origin: 'Salinas Valley, California',
-    description: 'Our lettuce is grown in the fertile Salinas Valley, known as the "Salad Bowl of the World," and delivered fresh to ensure the perfect crunch.',
+    origin: 'El Ejido, Almería, Spain',
+    description: 'Our lettuce is grown in the greenhouse capital of Europe, Almería, known for its perfect growing conditions, and delivered fresh daily to ensure the perfect crunch.',
     image: 'https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80',
     category: 'Vegetables'
   },
   {
-    name: 'Peanut Oil',
-    origin: 'Southern United States',
-    description: 'Our pure peanut oil is sourced from sustainable farms in the Southern United States, providing the perfect cooking medium for our famous fries.',
+    name: 'Olive Oil',
+    origin: 'Jaén, Andalusia, Spain',
+    description: 'Our pure extra virgin olive oil is sourced from sustainable olive groves in Jaén, providing the perfect cooking medium for our famous fries with authentic Spanish flavor.',
     image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2061&q=80',
     category: 'Condiments'
   }

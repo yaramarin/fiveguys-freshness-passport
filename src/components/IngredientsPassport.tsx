@@ -32,27 +32,27 @@ const ingredientData: IngredientCategory[] = [
     items: [
       {
         name: "Premium Ground Beef",
-        origin: "Midwest, USA",
-        farmer: "Heartland Family Farms",
+        origin: "Extremadura, Spain",
+        farmer: "Dehesas Ibéricas S.L.",
         datePicked: "Daily",
-        location: "Iowa Plains",
-        processes: ["Grass-fed", "No antibiotics", "Hormone-free"]
+        location: "Dehesas de Extremadura",
+        processes: ["Pasture-raised", "No antibiotics", "Hormone-free"]
       },
       {
         name: "Bacon",
-        origin: "Pennsylvania, USA",
-        farmer: "Harris Valley Ranch",
+        origin: "Salamanca, Spain",
+        farmer: "Embutidos Guijuelo",
         datePicked: "Weekly",
-        location: "Lancaster County",
+        location: "Sierra de Guijuelo",
         processes: ["Naturally cured", "No artificial preservatives"]
       },
       {
         name: "Beef Hot Dogs",
-        origin: "Nebraska, USA",
-        farmer: "Prairie Ranchers Collective",
+        origin: "Navarra, Spain",
+        farmer: "Carnicería Artesanal Pamplona",
         datePicked: "Weekly",
-        location: "Platte River Valley",
-        processes: ["100% beef", "No fillers", "Natural smoking process"]
+        location: "Valle del Baztán",
+        processes: ["100% beef", "No fillers", "Traditional smoking process"]
       }
     ]
   },
@@ -62,18 +62,18 @@ const ingredientData: IngredientCategory[] = [
     items: [
       {
         name: "Hamburger Buns",
-        origin: "Local Bakeries",
-        farmer: "Five Guys Bakery Network",
+        origin: "Madrid, Spain",
+        farmer: "Panadería Tradicional Madrileña",
         datePicked: "Daily",
-        location: "Within 50 miles of restaurants",
+        location: "Within 20 km of restaurants",
         processes: ["Made fresh daily", "No preservatives", "Traditional recipe"]
       },
       {
         name: "Hot Dog Buns",
-        origin: "Local Bakeries",
-        farmer: "Five Guys Bakery Network",
+        origin: "Madrid, Spain",
+        farmer: "Panadería Tradicional Madrileña",
         datePicked: "Daily",
-        location: "Within 50 miles of restaurants",
+        location: "Within 20 km of restaurants",
         processes: ["Made fresh daily", "No preservatives", "Traditional recipe"]
       }
     ]
@@ -83,20 +83,20 @@ const ingredientData: IngredientCategory[] = [
     color: "bg-yellow-500",
     items: [
       {
-        name: "Idaho Potatoes",
-        origin: "Snake River Valley, Idaho",
-        farmer: "Russet Farms Cooperative",
+        name: "Galician Potatoes",
+        origin: "Galicia, Spain",
+        farmer: "Cooperativa Agrícola Gallega",
         datePicked: "Weekly",
-        location: "Eastern Idaho",
-        processes: ["Volcanic soil grown", "Hand-selected", "Unwashed until preparation"]
+        location: "Ribeira Sacra, Galicia",
+        processes: ["Rich soil grown", "Hand-selected", "Unwashed until preparation"]
       },
       {
-        name: "Cajun Seasoning",
-        origin: "Louisiana, USA",
-        farmer: "Bayou Spice Company",
+        name: "Paprika Seasoning",
+        origin: "La Vera, Extremadura, Spain",
+        farmer: "Pimentón de la Vera",
         datePicked: "Monthly",
-        location: "New Orleans",
-        processes: ["Small-batch blending", "No artificial flavors", "Traditional recipe"]
+        location: "La Vera Valley",
+        processes: ["Smoke-dried", "Traditional milling", "Protected designation of origin"]
       }
     ]
   },
@@ -106,58 +106,58 @@ const ingredientData: IngredientCategory[] = [
     items: [
       {
         name: "Tomatoes",
-        origin: "California Central Valley",
-        farmer: "SunRipe Cooperative",
+        origin: "Murcia, Spain",
+        farmer: "Huerta Sol y Agua",
         datePicked: "Every 48 hours",
-        location: "San Joaquin Valley",
-        processes: ["Vine-ripened", "Hand-picked", "No pesticides"]
+        location: "Campo de Cartagena",
+        processes: ["Vine-ripened", "Hand-picked", "Sustainable farming"]
       },
       {
         name: "Lettuce",
-        origin: "Salinas Valley, California",
-        farmer: "Coastal Greens Farm",
+        origin: "Almería, Spain",
+        farmer: "Hortícolas El Ejido",
         datePicked: "Every 24 hours",
-        location: "Monterey County",
+        location: "El Ejido, Almería",
         processes: ["Hydroponically grown", "Hand-harvested", "Cold chain maintained"]
       },
       {
         name: "Green Peppers",
-        origin: "Florida, USA",
-        farmer: "Everglades Produce",
+        origin: "Granada, Spain",
+        farmer: "Vega de Granada",
         datePicked: "Every 48 hours",
-        location: "South Florida",
+        location: "Vega de Granada",
         processes: ["Shade-grown", "Hand-picked", "Organic methods"]
       },
       {
         name: "Onions",
-        origin: "Vidalia, Georgia",
-        farmer: "Sweet Valley Farms",
+        origin: "Valencia, Spain",
+        farmer: "Cooperativa Valenciana de Cebollas",
         datePicked: "Weekly",
-        location: "Tattnall County",
-        processes: ["Low-sulfur soil", "Hand-harvested", "Air-dried"]
+        location: "L'Horta de València",
+        processes: ["Traditional growing", "Hand-harvested", "Air-dried"]
       },
       {
         name: "Jalapeños",
-        origin: "New Mexico, USA",
-        farmer: "Rio Grande Chili Co.",
+        origin: "Cáceres, Spain",
+        farmer: "Pimientos del Valle del Jerte",
         datePicked: "Weekly",
-        location: "Hatch Valley",
+        location: "Valle del Jerte",
         processes: ["Sun-ripened", "Hand-picked", "Naturally grown"]
       },
       {
         name: "Mushrooms",
-        origin: "Pennsylvania, USA",
-        farmer: "Keystone Mushroom Farm",
+        origin: "La Rioja, Spain",
+        farmer: "Cultivos Fungiseta",
         datePicked: "Every 72 hours",
-        location: "Chester County",
+        location: "Sierra de Cameros",
         processes: ["Organic substrate", "Climate-controlled", "Hand-harvested"]
       },
       {
         name: "Pickles",
-        origin: "Michigan, USA",
-        farmer: "Great Lakes Pickling Co.",
+        origin: "Toledo, Spain",
+        farmer: "Encurtidos Castilla-La Mancha",
         datePicked: "Seasonal harvest",
-        location: "Western Michigan",
+        location: "La Mancha",
         processes: ["Barrel-fermented", "Small batch", "Traditional recipe"]
       }
     ]
@@ -168,51 +168,51 @@ const ingredientData: IngredientCategory[] = [
     items: [
       {
         name: "Mayonnaise",
-        origin: "Midwest, USA",
-        farmer: "Pure Foods Inc.",
+        origin: "Barcelona, Spain",
+        farmer: "Salsas Mediterráneas",
         datePicked: "Weekly batches",
-        location: "Evansville, Indiana",
+        location: "Sant Cugat del Vallès",
         processes: ["Real egg yolks", "Small batch", "Cold-processed"]
       },
       {
         name: "Ketchup",
-        origin: "Ohio, USA",
-        farmer: "Heartland Tomato Company",
+        origin: "Lleida, Spain",
+        farmer: "Tomate Artesano Catalán",
         datePicked: "Small batches weekly",
-        location: "Central Ohio",
+        location: "Plana de Lleida",
         processes: ["Slow-cooked", "Low sugar recipe", "No artificial preservatives"]
       },
       {
         name: "Mustard",
-        origin: "Vermont, USA",
-        farmer: "Green Mountain Mustard Works",
+        origin: "Girona, Spain",
+        farmer: "Condimentos de l'Empordà",
         datePicked: "Monthly small batches",
-        location: "Burlington",
+        location: "Empordà",
         processes: ["Stone-ground", "Barrel-aged", "Authentic recipe"]
       },
       {
-        name: "BBQ Sauce",
-        origin: "Texas, USA",
-        farmer: "Lone Star Sauce Co.",
+        name: "Alioli",
+        origin: "Tarragona, Spain",
+        farmer: "Sauces del Mediterráneo",
         datePicked: "Weekly batches",
-        location: "Austin",
-        processes: ["Slow-simmered", "Hickory-smoked flavor", "Family recipe"]
+        location: "Costa Daurada",
+        processes: ["Traditional recipe", "Freshly made", "Family recipe"]
       },
       {
         name: "Hot Sauce",
-        origin: "Louisiana, USA",
-        farmer: "Delta Pepper Farm",
+        origin: "Canary Islands, Spain",
+        farmer: "Mojo Canario",
         datePicked: "Monthly batches",
-        location: "Avery Island",
-        processes: ["Fermented peppers", "Aged in oak", "Original recipe"]
+        location: "Tenerife",
+        processes: ["Fermented peppers", "Volcanic soil grown", "Original recipe"]
       },
       {
-        name: "Peanut Oil",
-        origin: "Georgia, USA",
-        farmer: "Southern Oil Cooperative",
+        name: "Olive Oil",
+        origin: "Jaén, Spain",
+        farmer: "Aceites de Jaén",
         datePicked: "Seasonal pressing",
-        location: "Albany",
-        processes: ["Cold-pressed", "Filtered naturally", "No additives"]
+        location: "Sierra de Cazorla",
+        processes: ["Cold-pressed", "Extra virgin", "Protected designation of origin"]
       }
     ]
   },
@@ -221,35 +221,35 @@ const ingredientData: IngredientCategory[] = [
     color: "bg-purple-600",
     items: [
       {
-        name: "American Cheese",
-        origin: "Wisconsin, USA",
-        farmer: "Dairyland Cheese Co-op",
+        name: "Cheese",
+        origin: "Asturias, Spain",
+        farmer: "Quesería Asturiana",
         datePicked: "Weekly",
-        location: "Green County",
-        processes: ["Pasteurized milk", "Traditional recipe", "No artificial colors"]
+        location: "Picos de Europa",
+        processes: ["Pasteurized milk", "Traditional recipe", "Artisanal production"]
       },
       {
         name: "Vanilla Ice Cream",
-        origin: "Vermont, USA",
-        farmer: "Green Mountain Creamery",
+        origin: "Cantabria, Spain",
+        farmer: "Helados del Norte",
         datePicked: "Small batches weekly",
-        location: "Burlington",
-        processes: ["Madagascar vanilla", "Cream from local dairies", "Hand-churned"]
+        location: "Valle del Pas",
+        processes: ["Natural vanilla", "Cream from local dairies", "Hand-churned"]
       },
       {
         name: "Chocolate Syrup",
-        origin: "Pennsylvania, USA",
-        farmer: "Keystone Chocolate Works",
+        origin: "Zaragoza, Spain",
+        farmer: "Chocolates Artesanales de Aragón",
         datePicked: "Monthly batches",
-        location: "Hershey",
+        location: "Cinco Villas",
         processes: ["Real cocoa", "Small batch", "Traditional recipe"]
       },
       {
         name: "Whipped Cream",
-        origin: "Wisconsin, USA",
-        farmer: "Meadowland Dairy",
+        origin: "Cantabria, Spain",
+        farmer: "Lácteos Pasiegos",
         datePicked: "Weekly",
-        location: "Door County",
+        location: "Valles Pasiegos",
         processes: ["Heavy cream", "No stabilizers", "Made fresh daily"]
       }
     ]

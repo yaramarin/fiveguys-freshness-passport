@@ -67,7 +67,7 @@ const Hero = () => {
           >
             Discover the journey of our hand-selected, <span className="font-bold underline decoration-fiveguys-red">never frozen</span> ingredients that make every Five Guys meal exceptional.
           </p>
-          <div ref={actionRef} className="mt-8 opacity-100 transition-opacity duration-500">
+          <div ref={actionRef} className="mt-8 opacity-100 transition-opacity ">
             <a 
               href="#ingredients" 
               className="px-8 py-3 bg-fiveguys-red text-white font-medium rounded-md hover:bg-red-700 transition-colors duration-300 inline-flex items-center"

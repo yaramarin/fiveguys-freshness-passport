@@ -47,7 +47,7 @@ const ingredients = [
     name: 'Peanut Oil',
     origin: 'Andalusia, Spain',
     description: 'Our premium peanut oil is sourced from sustainable farms in Andalusia, providing the perfect cooking medium for our famous fries with authentic Spanish flavor.',
-    image: 'https://www.istockphoto.com/es/foto/cacahuetes-en-la-mesa-de-madera-r%C3%BAstica-gm657516712-120737111?utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fpenuts&utm_medium=affiliate&utm_source=unsplash&utm_term=penuts%3A%3A%3A',
+    image: 'https://images.unsplash.com/photo-1575399872095-9363bf262e64?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     category: 'Condiments'
   }
 ];
